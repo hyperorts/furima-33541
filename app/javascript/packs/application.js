@@ -4,7 +4,12 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+//require("turbolinks").start()
+//↑のturbolinksはアプリケーションにおいて、画面遷移を高速化するGemです。
+//ページを表示する際に、ページ内の全ての情報を読み込まずに、HTML要素だけを読み込むことで画面遷移を高速化しています。
+//turbolinksによって画面遷移は高速化しますが、次ページのHTML要素だけを読み取って表示するため、JavaScriptファイルが読み込まれず、JavaScriptにて設定したイベントが発火しないケースがあります。
+//turbolinksは、アプリケーションを作成すると標準で有効になっています。
+//JavaScriptファイルの処理が正常に動作しないことを防ぐため、ここではturbolinksを無効化しておきましょう。
 require("@rails/activestorage").start()
 require("channels")
 

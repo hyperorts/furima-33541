@@ -29,3 +29,5 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+.Ds_Store
+#↑の.Ds_Storeはディレクトリの情報を記録するファイル、度々生成されるものでGitで管理する上で必要ない作業が増えてしまう可能性があるため設定する。
