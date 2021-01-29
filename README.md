@@ -6,7 +6,7 @@
 | ----------           | ------ | ----------- |
 | nickname             | string | null: false |
 | email                | string | null: false |
-| password             | string | null: false |
+| encrypted_password   | string | null: false |
 | family_name          | string | null: false |
 | first_name           | string | null: false |
 | family_name_kana     | string | null: false |
@@ -19,10 +19,10 @@
 ## items テーブル
 | Column              | Type       | Options                        |
 | -----------         | ---------- | ------------------------------ |
-| item_name           | string     | null: false                    |
-| description_item    | text       | null: false                    |
-| item_category_id    | integer    | null: false                    |
-| item_status_id      | integer    | null: false                    |
+| name                | string     | null: false                    |
+| description         | text       | null: false                    |
+| category_id         | integer    | null: false                    |
+| status_id           | integer    | null: false                    |
 | shipping_cost_id    | integer    | null: false                    |
 | prefecture_id       | integer    | null: false                    |
 | days_ship_id        | integer    | null: false                    |
@@ -30,7 +30,7 @@
 | buyer               | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :user
-- has_one :deals
+- has_one :deal
 
 ## deals テーブル
 | Column      | Type       | Options                        |
@@ -51,6 +51,6 @@
 | address_number      | string     | null: false                    |
 | building_name       | string     |                                |
 | phone_number        | string     | null: false                    |
-| order               | references | null: false, foreign_key: true |
+| order(FK)           | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :deals
