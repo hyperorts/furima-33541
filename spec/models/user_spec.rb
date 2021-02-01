@@ -113,5 +113,8 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include("Birthday can't be blank")
     end
+    it '新規登録成功時'
+      expect(@user).to be_valid
+    end
   end
 end
