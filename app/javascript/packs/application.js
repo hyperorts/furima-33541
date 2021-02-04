@@ -12,6 +12,7 @@ require("@rails/ujs").start()
 //JavaScriptファイルの処理が正常に動作しないことを防ぐため、ここではturbolinksを無効化しておきましょう。
 require("@rails/activestorage").start()
 require("channels")
+require("../item_price")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
