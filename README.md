@@ -54,3 +54,5 @@
 | deal(FK)           | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :deals
+
+<!-- sabunn -->
