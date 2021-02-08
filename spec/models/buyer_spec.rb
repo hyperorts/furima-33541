@@ -60,6 +60,11 @@ RSpec.describe Buyer, type: :model do
         @buyer.valid?
         expect(@buyer.errors.full_messages).to include( "Phone number is invalid")
       end
+      it "電話番号は英数混合では購入不可" do
+        @buyer.phone_number  = "090abcdefgh"
+        @buyer.valid?
+        expect(@buyer.errors.full_messages).to include( "Phone number is invalid")
+      end
       it "user_idなしでは購入不可" do
         @buyer.user_id = ""
         @buyer.valid?
