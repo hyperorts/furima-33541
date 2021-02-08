@@ -10,6 +10,7 @@ RSpec.describe Buyer, type: :model do
   end
   describe '商品購入' do
     context '内容に問題がある場合' do
+    end
       it "郵便番号が空では購入不可" do
         @buyer.postal_code = ""
         @buyer.valid?
@@ -80,14 +81,13 @@ RSpec.describe Buyer, type: :model do
         @buyer.valid?
         expect(@buyer.errors.full_messages).to include("Token can't be blank")
       end
-      context '内容に問題がない場合' do
-        it "上記の条件が全て満たされた場合は購入可" do
-          expect(@buyer).to be_valid
-          end
-        it "建物名なしでも購入可" do
-          @buyer.building_name = ""
-          expect(@buyer).to be_valid
-        end
+    context '内容に問題がない場合' do
+      it "上記の条件が全て満たされた場合は購入可" do
+        expect(@buyer).to be_valid
+      end
+      it "建物名なしでも購入可" do
+        @buyer.building_name = ""
+        expect(@buyer).to be_valid
       end
     end
   end
