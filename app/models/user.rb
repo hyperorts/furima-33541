@@ -9,11 +9,11 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    validates :family_name, format: { with: FULL_WIDTH }
-    validates :first_name, format: { with: FULL_WIDTH }
-    validates :family_name_kana, format: { with: FULL_WIDTH_KATAKANA }
-    validates :first_name_kana, format: { with: FULL_WIDTH_KATAKANA }
-    validates :password, format: { with:  /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
+    validates :family_name, format: { with: FULL_WIDTH,allow_blank: true}
+    validates :first_name, format: { with: FULL_WIDTH,allow_blank: true}
+    validates :family_name_kana, format: { with: FULL_WIDTH_KATAKANA,allow_blank: true}
+    validates :first_name_kana, format: { with: FULL_WIDTH_KATAKANA,allow_blank: true}
+    validates :password, format: { with:  /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i,allow_blank: true}
     validates :birthday
   end
 
